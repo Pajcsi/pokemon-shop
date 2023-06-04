@@ -1,7 +1,8 @@
 <div class="pokemon-card-container">
     <div class="pokemon-card" *ngFor="let pokemon of pokemonData">
         <div class="pokemon-name">{{pokemon.name}}</div>
-        <p class="pokemon-price">Price: {{pokemon.weight * 100}}</p>
-        <button class="pokemon-buy-button">BUY</button>
+        <img [src]=pokemon.picture>
+        <p class="pokemon-price">Price: {{pokemon.price}}</p>
+        <button class="btn btn-primary" (click)="buyPokemon()">BUY</button>
     </div>
 </div>
