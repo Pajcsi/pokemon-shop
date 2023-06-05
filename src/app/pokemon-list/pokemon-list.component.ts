@@ -27,9 +27,14 @@ export class PokemonListComponent {
     });
   }
 
-  buyPokemon(): void {
-    console.log('buying!');
-    this.walletService.updateWallet(1000);
+  buyPokemon(pokemon: Pokemon): void {
+    console.log('Trying to buy!');
+    if (this.walletService.wallet - pokemon.price >= 0) {
+      this.walletService.wallet -= pokemon.price;
+    } else {
+      console.log("Not enough money!");
+    }
+    
     console.log(this.walletService.wallet);
   }
 }
