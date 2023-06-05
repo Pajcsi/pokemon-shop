@@ -14,8 +14,13 @@
   .pokemon-name {
     font-size: 18px;
     font-weight: bold;
+    text-transform: capitalize;
   }
   
   .pokemon-price {
     margin-top: 8px;
+  }
+
+  h4 {
+    margin: 8px;
   }

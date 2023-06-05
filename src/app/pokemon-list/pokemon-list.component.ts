@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 import { Pokemon } from '../models/pokemon.model';
 import { WalletService } from '../services/wallet.service';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -28,13 +29,12 @@ export class PokemonListComponent {
   }
 
   buyPokemon(pokemon: Pokemon): void {
-    console.log('Trying to buy!');
-    if (this.walletService.wallet - pokemon.price >= 0) {
-      this.walletService.wallet -= pokemon.price;
-    } else {
-      console.log("Not enough money!");
-    }
-    
-    console.log(this.walletService.wallet);
+    this.walletService.wallet$.pipe(take(1)).subscribe(wallet => {
+      if (wallet - pokemon.price >= 0) {
+        const newWalletValue = wallet - pokemon.price;
+        this.walletService.updateWallet(newWalletValue);
+        this.pokemonInPocket.push(pokemon);
+      }
+    });
   }
 }

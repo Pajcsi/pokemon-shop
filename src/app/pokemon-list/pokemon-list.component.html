@@ -6,3 +6,12 @@
         <button class="btn btn-primary" (click)="buyPokemon(pokemon)">BUY</button>
     </div>
 </div>
+
+<h4 *ngIf="pokemonInPocket.length > 0">Pokemon Pocket:</h4>
+<div class="pokemon-card-container">
+    <div class="pokemon-card" *ngFor="let pokemon of pokemonInPocket">
+        <div class="pokemon-name">{{pokemon.name}}</div>
+        <img [src]=pokemon.picture>
+        <p class="pokemon-price">Price: {{pokemon.price}}</p>
+    </div>
+</div>
