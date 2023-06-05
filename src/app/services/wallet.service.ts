@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ export class WalletService {
 
   constructor() { }
 
-  updateWallet(price: number): void {
-    this.wallet -= price;
-  }
+  // updateWallet(price: number): void {
+  //   this.wallet -= price;
+  // }
+
+  
 }

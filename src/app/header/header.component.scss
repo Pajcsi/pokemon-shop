@@ -7,6 +7,18 @@ header h1 {
     text-transform: uppercase;
 }
 
-.wallet, .search-bar {
+.wallet, .label, .search-bar, .input-bar{
     margin: 8px;
+}
+
+
+.wallet-container {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    text-transform: uppercase;
+    color: red;
+    background-color: rgb(180, 180, 180);
 }

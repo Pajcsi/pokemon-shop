@@ -7,10 +7,20 @@ import { WalletService } from '../services/wallet.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  wallet: number;
+  //wallet: number;
+  inputMoney: number = 0;
+  warning: string = '';
 
-  constructor(private walletService: WalletService) {
-    this.wallet = this.walletService.wallet;
+  constructor(public walletService: WalletService) {
+    //this.wallet = this.walletService.wallet;
   }
 
+  addMoneyToWallet() {
+    if (this.inputMoney >= 0) {
+      this.walletService.wallet += this.inputMoney;
+    }
+    if (this.walletService.wallet > 20000) {
+      this.warning = 'Lot of money';
+    }
+  }
 }

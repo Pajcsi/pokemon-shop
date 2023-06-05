@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { WalletService } from './services/wallet.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { WalletService } from './services/wallet.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

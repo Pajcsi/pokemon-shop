@@ -2,6 +2,13 @@
     <h1>Pokemon Shop</h1>
 </header>
 <section>
-    <p class="wallet">Your wallet: {{wallet}} </p>
+    <div class="wallet-container">
+        <p class="wallet">Your wallet: {{walletService.wallet}} </p>
+        <label class="label" [innerHTML]="warning"></label>
+    </div>
+    
+    <input class="input-bar" type="number" min="0" placeholder="Add money to wallet" [(ngModel)]="inputMoney">
+    <button type="button" class="btn btn-primary" (click)="addMoneyToWallet()">Add money</button>
+    <br>
     <input class="search-bar" type="text" placeholder="Filter by Pokemon">
 </section>
