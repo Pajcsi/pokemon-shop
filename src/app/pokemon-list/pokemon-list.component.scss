@@ -1,26 +1,31 @@
 .pokemon-card-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .pokemon-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 8px;
-    width: 200px;
-  }
-  
-  .pokemon-name {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: capitalize;
-  }
-  
-  .pokemon-price {
-    margin-top: 8px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  h4 {
-    margin: 8px;
-  }
+.pokemon-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  width: 200px;
+}
+
+.pokemon-name {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.pokemon-price {
+  margin-top: 8px;
+}
+
+h4 {
+  margin: 8px;
+}
+
+#notFound {
+  text-align: center;
+  color: red;
+}

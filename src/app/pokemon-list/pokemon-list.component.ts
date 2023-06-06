@@ -10,11 +10,11 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent {
-  pokemonData: Pokemon[] = [];
   pokemonInPocket: Pokemon[] = [];
+  notFound: string = '';
 
   constructor(
-    private pokemonService: PokemonService,
+    public pokemonService: PokemonService,
     private walletService: WalletService
   ) { }
 
@@ -22,9 +22,20 @@ export class PokemonListComponent {
     this.pokemonService.getPokemons().subscribe((response: any) => {
       response.results.forEach((pokemon: any) => {
         this.pokemonService.getData(pokemon.name).subscribe((pokemon: any) => {
-          this.pokemonData.push({ name: pokemon.name, price: pokemon.weight*100, picture: pokemon.sprites.front_default });
+          this.pokemonService.updatePokemons({
+            name: pokemon.name,
+            price: pokemon.weight * 100,
+            picture: pokemon.sprites.front_default
+          });
         });
       });
+    });
+    this.pokemonService.filteredPokemonData$.subscribe(pokemon => {
+      if (pokemon.length == 0) {
+        this.notFound = 'There is no pokemon with that name!';
+      } else {
+        this.notFound = '';
+      }
     });
   }
 

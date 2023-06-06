@@ -1,5 +1,7 @@
+<h4>Pokemon Shop:</h4>
+<div id="notFound" [innerHTML]="notFound"></div>
 <div class="pokemon-card-container">
-    <div class="pokemon-card" *ngFor="let pokemon of pokemonData">
+    <div class="pokemon-card" *ngFor="let pokemon of pokemonService.filteredPokemonData$ | async">
         <div class="pokemon-name">{{pokemon.name}}</div>
         <img [src]=pokemon.picture>
         <p class="pokemon-price">Price: {{pokemon.price}}</p>
@@ -7,7 +9,7 @@
     </div>
 </div>
 
-<h4 *ngIf="pokemonInPocket.length > 0">Pokemon Pocket:</h4>
+<h4 *ngIf="pokemonInPocket.length > 0">Your Pocket:</h4>
 <div class="pokemon-card-container">
     <div class="pokemon-card" *ngFor="let pokemon of pokemonInPocket">
         <div class="pokemon-name">{{pokemon.name}}</div>

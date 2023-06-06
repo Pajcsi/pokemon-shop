@@ -3,14 +3,17 @@ header {
     background-color: aquamarine;
     padding: 10px;
 }
+
 header h1 {
     text-transform: uppercase;
 }
 
-.wallet, .label, .search-bar, .input-bar{
+.wallet,
+.label,
+.search-bar,
+.input-bar {
     margin: 8px;
 }
-
 
 .wallet-container {
     display: flex;
