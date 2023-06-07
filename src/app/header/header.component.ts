@@ -36,7 +36,7 @@ export class HeaderComponent {
 
   addMoneyToWallet() {
     this.walletService.wallet$.pipe(take(1)).subscribe(wallet => {
-      if (Number(this.inputMoney) > 0) {
+      if (this.inputMoney > 0) {
         const newWalletValue = wallet + this.inputMoney;
         this.walletService.updateWallet(newWalletValue);
       }

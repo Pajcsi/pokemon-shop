@@ -3,7 +3,7 @@
 <div class="pokemon-card-container">
     <div class="pokemon-card" *ngFor="let pokemon of pokemonService.filteredPokemonData$ | async">
         <div class="pokemon-name">{{pokemon.name}}</div>
-        <img [src]=pokemon.picture>
+        <img [src]=pokemon.pictureUrl>
         <p class="pokemon-price">Price: {{pokemon.price}}</p>
         <button class="btn btn-primary" (click)="buyPokemon(pokemon)">BUY</button>
     </div>
@@ -13,7 +13,7 @@
 <div class="pokemon-card-container">
     <div class="pokemon-card" *ngFor="let pokemon of pokemonInPocket">
         <div class="pokemon-name">{{pokemon.name}}</div>
-        <img [src]=pokemon.picture>
+        <img [src]=pokemon.pictureUrl>
         <p class="pokemon-price">Price: {{pokemon.price}}</p>
     </div>
 </div>

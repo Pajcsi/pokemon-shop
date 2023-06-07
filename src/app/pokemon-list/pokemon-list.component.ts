@@ -25,7 +25,7 @@ export class PokemonListComponent {
           this.pokemonService.updatePokemons({
             name: pokemon.name,
             price: pokemon.weight * 100,
-            picture: pokemon.sprites.front_default
+            pictureUrl: pokemon.sprites.front_default
           });
         });
       });

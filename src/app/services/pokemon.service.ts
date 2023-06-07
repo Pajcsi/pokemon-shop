@@ -35,7 +35,13 @@ export class PokemonService {
 
   filterPokemonByName(value: string): void {
     const pokemonData = this.pokemonSubject.getValue();
-    const filteredData = pokemonData.filter((pokemon) => pokemon.name.includes(value));
+    let filteredData: any;
+    
+    if (value === '') {
+      filteredData = pokemonData;
+    } else {
+      filteredData = pokemonData.filter((pokemon) => pokemon.name === value);
+    }
     this.filteredPokemonSubject.next(filteredData);
   }
 }
